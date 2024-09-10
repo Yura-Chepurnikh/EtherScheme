@@ -19,7 +19,8 @@ AndLogicGateSymbol::AndLogicGateSymbol() : QGraphicsPathItem()
     gateCounter.lineTo(60, 10);
 
     setPath(gateCounter);
-    setPen(QPen(Qt::red, 2));
+    QColor col("#FF6A00");
+    setPen(QPen(col, 2));
 }
 
 void AndLogicGateSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {

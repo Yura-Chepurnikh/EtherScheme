@@ -3,6 +3,7 @@
 #include "../LogicGateSymbols/AndLogicGateSymbol.h"
 #include <QApplication>
 #include <QGraphicsScene>
+
 #include <QGraphicsView>
 
 int main(int argc, char *argv[])
@@ -20,6 +21,7 @@ int main(int argc, char *argv[])
     view->setScene(scene);
     view->setGeometry(0, 0, 800, 600);
 
+    view->setStyleSheet({"background-color: #1F1F1F; border: none }"});
     w.setCentralWidget(view);
 
     w.show();
