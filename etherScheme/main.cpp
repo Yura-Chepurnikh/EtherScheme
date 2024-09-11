@@ -1,9 +1,9 @@
 #include "mainwindow.h"
 
 #include "../LogicGateSymbols/AndLogicGateSymbol.h"
+#include "WorkSpace.h"
 #include <QApplication>
 #include <QGraphicsScene>
-
 #include <QGraphicsView>
 
 int main(int argc, char *argv[])
@@ -11,18 +11,20 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
 
-    QGraphicsView* view = new QGraphicsView();
-    QGraphicsScene* scene = new QGraphicsScene();
+    WorkSpace* workspace = new WorkSpace();
 
-    AndLogicGateSymbol* andGate = new AndLogicGateSymbol();
+    // QGraphicsView* view = new QGraphicsView();
+    // QGraphicsScene* scene = new QGraphicsScene();
 
-    scene->addItem(andGate);
+    // AndLogicGateSymbol* andGate = new AndLogicGateSymbol();
 
-    view->setScene(scene);
-    view->setGeometry(0, 0, 800, 600);
+    // scene->addItem(andGate);
 
-    view->setStyleSheet({"background-color: #1F1F1F; border: none }"});
-    w.setCentralWidget(view);
+    // view->setScene(scene);
+    // view->setGeometry(0, 0, 800, 600);
+
+    // view->setStyleSheet({"background-color: #1F1F1F; border: none }"});
+    w.setCentralWidget(workspace);
 
     w.show();
     return a.exec();

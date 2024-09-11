@@ -12,13 +12,12 @@ QT += core gui widgets
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    AndLogicGateSymbol.cpp
+    AndLogicGateSymbol.cpp \
+    LogicGateSymbol.cpp
 
 HEADERS += \
     AndLogicGateSymbol.h \
-    LogicGateSymbol.h \
-    LogicGateSymbols_global.h \
-    logicgatesymbols.h
+    LogicGateSymbol.h
 
 # Default rules for deployment.
 unix {

@@ -7,8 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QGraphicsView* view = new QGraphicsView();
-    QGraphicsScene* workspace = new QGraphicsScene();
+    view = new QGraphicsView();
+    workspace = new QGraphicsScene();
 
     QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
 
@@ -42,4 +42,14 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::wheelEvent(QWheelEvent* event) {
+    const double scaleFactor = 1.15;
+
+    if (event->angleDelta().y() > 0) {
+        view->scale(scaleFactor, scaleFactor);
+    } else {
+        view->scale(1 / scaleFactor, 1 / scaleFactor);
+    }
 }

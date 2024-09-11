@@ -1,6 +1,6 @@
 #include "./AndLogicGateSymbol.h"
 
-AndLogicGateSymbol::AndLogicGateSymbol() : QGraphicsPathItem()
+AndLogicGateSymbol::AndLogicGateSymbol() : LogicGateSymbol(this)
 {
     QPainterPath gateCounter;
 
@@ -19,31 +19,32 @@ AndLogicGateSymbol::AndLogicGateSymbol() : QGraphicsPathItem()
     gateCounter.lineTo(60, 10);
 
     setPath(gateCounter);
+
     QColor col("#FF6A00");
     setPen(QPen(col, 2));
 
     setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
 }
 
-void AndLogicGateSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
-    Q_UNUSED(option);
-    Q_UNUSED(widget);
+// void AndLogicGateSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
+//     Q_UNUSED(option);
+//     Q_UNUSED(widget);
 
-    painter->setRenderHint(QPainter::Antialiasing, true);
-    painter->setPen(pen());
-    painter->drawPath(path());
-}
+//     painter->setRenderHint(QPainter::Antialiasing, true);
+//     painter->setPen(pen());
+//     painter->drawPath(path());
+// }
 
-void AndLogicGateSymbol::mousePressEvent(QGraphicsSceneMouseEvent *event) {
-    setCursor(Qt::ClosedHandCursor);
-    QGraphicsPathItem::mouseMoveEvent(event);
-}
+// void AndLogicGateSymbol::mousePressEvent(QGraphicsSceneMouseEvent *event) {
+//     setCursor(Qt::ClosedHandCursor);
+//     QGraphicsPathItem::mouseMoveEvent(event);
+// }
 
-void AndLogicGateSymbol::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
-    QGraphicsPathItem::mouseMoveEvent(event);
-}
+// void AndLogicGateSymbol::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
+//     QGraphicsPathItem::mouseMoveEvent(event);
+// }
 
-void AndLogicGateSymbol::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
-    setCursor(Qt::ArrowCursor);
-    QGraphicsPathItem::mouseReleaseEvent(event);
-}
+// void AndLogicGateSymbol::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
+//     setCursor(Qt::ArrowCursor);
+//     QGraphicsPathItem::mouseReleaseEvent(event);
+// }
