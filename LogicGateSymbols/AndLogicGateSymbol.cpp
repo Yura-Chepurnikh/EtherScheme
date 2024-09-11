@@ -21,6 +21,8 @@ AndLogicGateSymbol::AndLogicGateSymbol() : QGraphicsPathItem()
     setPath(gateCounter);
     QColor col("#FF6A00");
     setPen(QPen(col, 2));
+
+    setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
 }
 
 void AndLogicGateSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
@@ -30,4 +32,18 @@ void AndLogicGateSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem
     painter->setRenderHint(QPainter::Antialiasing, true);
     painter->setPen(pen());
     painter->drawPath(path());
+}
+
+void AndLogicGateSymbol::mousePressEvent(QGraphicsSceneMouseEvent *event) {
+    setCursor(Qt::ClosedHandCursor);
+    QGraphicsPathItem::mouseMoveEvent(event);
+}
+
+void AndLogicGateSymbol::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
+    QGraphicsPathItem::mouseMoveEvent(event);
+}
+
+void AndLogicGateSymbol::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
+    setCursor(Qt::ArrowCursor);
+    QGraphicsPathItem::mouseReleaseEvent(event);
 }
