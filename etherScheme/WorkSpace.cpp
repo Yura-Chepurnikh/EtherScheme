@@ -1,13 +1,17 @@
 #include "./WorkSpace.h"
 #include "../LogicGateSymbols/AndLogicGateSymbol.h"
+#include "../LogicGateSymbols/NotLogicGateSymbol.h"
 
 WorkSpace::WorkSpace(QWidget* parent) : QGraphicsView(parent)
 {
     workspace = new QGraphicsScene();
     setScene(workspace);
 
-    AndLogicGateSymbol* andGate = new AndLogicGateSymbol();
+    LogicGateSymbol* andGate = new AndLogicGateSymbol();
+
+    LogicGateSymbol* notGate = new NotLogicGateSymbol();
     workspace->addItem(andGate);
+    workspace->addItem(notGate);
 
     setGeometry(0, 0, 800, 600);
     setStyleSheet({"background-color: #1F1F1F; border: none }"});

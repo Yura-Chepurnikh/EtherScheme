@@ -14,12 +14,15 @@ SOURCES += \
     mainwindow.cpp \
     ../LogicGateSymbols/AndLogicGateSymbol.cpp \
     ../LogicGateSymbols/LogicGateSymbol.cpp \
+    ../LogicGateSymbols/NotLogicGateSymbol.cpp \
+
 
 HEADERS += \
     WorkSpace.h \
     mainwindow.h \
     ../LogicGateSymbols/AndLogicGateSymbol.h \
     ../LogicGateSymbols/LogicGateSymbol.h \
+    ../LogicGateSymbols/NotLogicGateSymbol.h \
 
 
 FORMS += \

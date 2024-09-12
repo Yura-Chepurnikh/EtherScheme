@@ -13,11 +13,13 @@ QT += core gui widgets
 
 SOURCES += \
     AndLogicGateSymbol.cpp \
-    LogicGateSymbol.cpp
+    LogicGateSymbol.cpp \
+    NotLogicGateSymbol.cpp
 
 HEADERS += \
     AndLogicGateSymbol.h \
-    LogicGateSymbol.h
+    LogicGateSymbol.h \
+    NotLogicGateSymbol.h
 
 # Default rules for deployment.
 unix {

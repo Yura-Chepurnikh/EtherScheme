@@ -89,8 +89,8 @@ void *OrLogicGateSymbol::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_CLASSOrLogicGateSymbolENDCLASS.stringdata0))
         return static_cast<void*>(this);
-    if (!strcmp(_clname, "QGraphicsPathItem"))
-        return static_cast< QGraphicsPathItem*>(this);
+    if (!strcmp(_clname, "LogicGateSymbol"))
+        return static_cast< LogicGateSymbol*>(this);
     return QObject::qt_metacast(_clname);
 }
 
