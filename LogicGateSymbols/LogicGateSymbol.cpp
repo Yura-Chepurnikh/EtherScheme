@@ -2,6 +2,8 @@
 
 LogicGateSymbol::LogicGateSymbol(QGraphicsPathItem* parent = nullptr) : QGraphicsPathItem(parent) { }
 
+int LogicGateSymbol::gridGap = 30;
+
 void LogicGateSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
     Q_UNUSED(option);
     Q_UNUSED(widget);
@@ -12,15 +14,28 @@ void LogicGateSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
 }
 
 void LogicGateSymbol::mousePressEvent(QGraphicsSceneMouseEvent *event) {
-    setCursor(QCursor(Qt::ClosedHandCursor));
+    setCursor(QCursor(Qt::DragCopyCursor));
     QGraphicsPathItem::mousePressEvent(event);
-}
-
-void LogicGateSymbol::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
-    QGraphicsPathItem::mouseMoveEvent(event);
 }
 
 void LogicGateSymbol::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
     setCursor(QCursor(Qt::ArrowCursor));
     QGraphicsPathItem::mouseReleaseEvent(event);
+}
+
+void LogicGateSymbol::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
+    QPointF cursorPos = event->scenePos();
+    int gap = LogicGateSymbol::getGap();
+
+    QPointF bindingPos = snapToGrid(cursorPos, gap);
+
+    setPos(bindingPos);
+
+    QGraphicsPathItem::mousePressEvent(event);
+}
+
+QPointF LogicGateSymbol::snapToGrid(const QPointF &pos, int gridGap) {
+    qreal x = qRound(pos.x() / gridGap) * gridGap;
+    qreal y = qRound(pos.y() / gridGap) * gridGap;
+    return QPointF(x, y);
 }
