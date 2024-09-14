@@ -1,5 +1,4 @@
 QT       += core gui
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
@@ -15,6 +14,7 @@ SOURCES += \
     ../LogicGateSymbols/AndLogicGateSymbol.cpp \
     ../LogicGateSymbols/LogicGateSymbol.cpp \
     ../LogicGateSymbols/NotLogicGateSymbol.cpp \
+    ../BondingWires/BondingWire.cpp \
 
 
 HEADERS += \
@@ -23,6 +23,7 @@ HEADERS += \
     ../LogicGateSymbols/AndLogicGateSymbol.h \
     ../LogicGateSymbols/LogicGateSymbol.h \
     ../LogicGateSymbols/NotLogicGateSymbol.h \
+    ../BondingWires/BondingWire.h \
 
 
 FORMS += \

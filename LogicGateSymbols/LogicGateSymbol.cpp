@@ -2,7 +2,7 @@
 
 LogicGateSymbol::LogicGateSymbol(QGraphicsPathItem* parent = nullptr) : QGraphicsPathItem(parent) { }
 
-int LogicGateSymbol::gridGap = 30;
+int LogicGateSymbol::gridGap = 5;
 
 void LogicGateSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
     Q_UNUSED(option);
@@ -14,12 +14,12 @@ void LogicGateSymbol::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
 }
 
 void LogicGateSymbol::mousePressEvent(QGraphicsSceneMouseEvent *event) {
-    setCursor(QCursor(Qt::DragCopyCursor));
+    setCursor(QCursor(Qt::ArrowCursor));
     QGraphicsPathItem::mousePressEvent(event);
 }
 
 void LogicGateSymbol::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
-    setCursor(QCursor(Qt::ArrowCursor));
+    setCursor(QCursor(Qt::CustomCursor));
     QGraphicsPathItem::mouseReleaseEvent(event);
 }
 

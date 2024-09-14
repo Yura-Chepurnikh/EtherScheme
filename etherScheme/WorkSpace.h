@@ -1,6 +1,7 @@
 #ifndef WORKSPACE_H
 #define WORKSPACE_H
 
+#include "../BondingWires/BondingWire.h"
 #include <QGraphicsView>
 #include <QWheelEvent>
 #include <QWidget>
@@ -21,6 +22,7 @@ public:
     QGraphicsScene* workspace;
 
 private:
+    BondingWire* Wire;
     bool ShowGrid;
     void drawGrid();
 };

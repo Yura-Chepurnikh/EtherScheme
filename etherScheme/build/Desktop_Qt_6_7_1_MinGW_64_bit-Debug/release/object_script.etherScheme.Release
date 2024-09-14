@@ -1,0 +1,11 @@
+release/WorkSpace.o
+release/main.o
+release/mainwindow.o
+release/AndLogicGateSymbol.o
+release/LogicGateSymbol.o
+release/NotLogicGateSymbol.o
+release/BondingWire.o
+release/moc_mainwindow.o
+release/moc_AndLogicGateSymbol.o
+release/moc_NotLogicGateSymbol.o
+release/moc_BondingWire.o

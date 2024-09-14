@@ -4,16 +4,9 @@
 
 WorkSpace::WorkSpace(QGraphicsScene* scene) : QGraphicsView(scene), ShowGrid(true)
 {
-    // workspace = new QGraphicsScene();
-    // setScene(workspace);
+    Wire = new BondingWire(scene);
+    Wire->show();
 
-    // LogicGateSymbol* andGate = new AndLogicGateSymbol();
-
-    // LogicGateSymbol* notGate = new NotLogicGateSymbol();
-    // workspace->addItem(andGate);
-    // workspace->addItem(notGate);
-
-    // setGeometry(0, 0, 800, 600);
     setStyleSheet({"background-color: #1F1F1F; border: none }"});
     setRenderHint(QPainter::Antialiasing);
     setDragMode(QGraphicsView::ScrollHandDrag);

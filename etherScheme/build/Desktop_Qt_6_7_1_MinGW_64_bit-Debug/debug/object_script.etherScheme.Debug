@@ -1,0 +1,11 @@
+debug/WorkSpace.o
+debug/main.o
+debug/mainwindow.o
+debug/AndLogicGateSymbol.o
+debug/LogicGateSymbol.o
+debug/NotLogicGateSymbol.o
+debug/BondingWire.o
+debug/moc_mainwindow.o
+debug/moc_AndLogicGateSymbol.o
+debug/moc_NotLogicGateSymbol.o
+debug/moc_BondingWire.o
