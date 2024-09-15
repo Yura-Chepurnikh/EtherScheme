@@ -7,6 +7,8 @@ BondingWire::BondingWire(QGraphicsScene* scene) : QGraphicsView(scene),
 
 void BondingWire::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
+        StartPoint = mapToScene(event->pos());
+
         QPainterPath path;
         path.moveTo(mapToScene(event->pos()));
 
@@ -19,14 +21,39 @@ void BondingWire::mousePressEvent(QMouseEvent *event) {
 
 void BondingWire::mouseMoveEvent(QMouseEvent *event) {
     if (event->buttons() & Qt::LeftButton && PathItem) {
+        QPointF currentPoint = mapToScene(event->pos());
+
+        int gap = LogicGateSymbol::getGap();
+
+        // qreal dx = std::abs(currentPoint.x() - StartPoint.x());
+        // qreal dy = std::abs(currentPoint.y() - StartPoint.y());
+
+        // if (dx > dy)
+        //     currentPoint.setY(StartPoint.y());
+        // else if (dx < dy)
+        //     currentPoint.setX(StartPoint.x());
+        // else {
+        //     currentPoint.setX(StartPoint.x());
+        //     currentPoint.setY(StartPoint.y());
+        //     qDebug() << "Yes";
+        // }
+
+        QPointF gridPoint = snapToGrid(currentPoint, gap);
+
         QPainterPath path = PathItem->path();
-        path.lineTo(mapToScene(event->pos()));
+        path.lineTo(gridPoint);
         PathItem->setPath(path);
     }
 }
 
 void BondingWire::mouseReleaseEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
-        PathItem == nullptr;
+        PathItem = nullptr;
     }
+}
+
+QPointF BondingWire::snapToGrid(const QPointF &pos, int gridGap) {
+    qreal x = qRound(pos.x() / gridGap) * gridGap;
+    qreal y = qRound(pos.y() / gridGap) * gridGap;
+    return QPointF(x, y);
 }
